@@ -14,3 +14,4 @@ jobs:
           echo "Issue Body: ${{ github.event.issue.body }}"
           echo "Issue Created At: ${{ github.event.issue.created_at }}"
           echo "Issue URL: ${{ github.event.issue.html_url }}"
+          echo "Event: ${{ toJson(github.event) }}"
