@@ -1,0 +1,16 @@
+name: Issue Created
+
+on: 
+  issues:
+    types: [opened]
+
+jobs:
+  issue_created:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display issue information
+        run: |
+          echo "Issue Title: ${{ github.event.issue.title }}"
+          echo "Issue Body: ${{ github.event.issue.body }}"
+          echo "Issue Created At: ${{ github.event.issue.created_at }}"
+          echo "Issue URL: ${{ github.event.issue.html_url }}"
