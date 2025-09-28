@@ -1,23 +1,18 @@
 # Issue Events
 
-Shows two things: reacting to a new issue and running a simple multi‑stage pipeline on push.
+Two workflows: one reacts to a new issue, one is a multi‑stage pipeline on push.
 
-## Workflows
+## Purpose
+Demonstrate event payload usage alongside a standard build → lint → test → deploy chain.
 
-1. Issue workflow: triggers on `issues` (opened) and prints useful fields + the raw JSON
-2. Deployment workflow: build → lint → test → deploy with `needs` links
+## Highlights
+- `issues` trigger (opened)
+- Title/body extraction & raw JSON dump
+- Lint/test gating before deploy
+- `needs` chain for ordered stages
 
-## What you learn
-
-- Basic event payload usage (`github.event`)
-- Filtering by issue action
-- Printing JSON for quick inspection
-- Simple “stop deploy if tests fail” chain
-
-## Why it exists
-
-Highlights how to react to repo activity and combine it with a normal build pipeline.
+## Notes
+Keeps logic minimal; focus is on event context access.
 
 ## Next
-
-See `event-triggers` for multiple events and filters.
+`event-triggers`
